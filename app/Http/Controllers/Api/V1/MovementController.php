@@ -20,7 +20,7 @@ class MovementController extends Controller
     public function index()
     {
         $user = auth()->user();
-        $movements = Movement::with(['account', 'category', 'event', 'transferOut', 'transferIn'])
+        $movements = Movement::with(['account', 'category', 'event', 'transferOut', 'transferIn', 'investment'])
         ->where([
             ['user_id', $user->id]
         ])
